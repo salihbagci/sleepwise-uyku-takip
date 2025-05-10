@@ -111,4 +111,13 @@ if user_name:
         ax.set_title("Son 7 Günlük Uyku Süresi")
         ax.grid(True)
         st.pyplot(fig)
+        # Ortalama ve öneri
+        ortalama = sum(durations) / len(durations)
+        st.info(f"Son 7 gün ortalama uyku süren: {ortalama:.2f} saat.")
+        if ortalama < 6:
+            st.warning("Daha fazla uyumalısın! Uyku süren sağlıklı düzeyin altında.")
+        elif ortalama > 9:
+            st.warning("Çok fazla uyuyorsun, bu da sağlıksız olabilir.")
+        else:
+            st.success("Harika! Uyku süren ideal aralıkta.")
 
